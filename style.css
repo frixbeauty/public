@@ -269,6 +269,12 @@ main {
   gap: 14px;
 }
 
+.form-section {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
 label span {
   display: block;
   margin-bottom: 8px;
