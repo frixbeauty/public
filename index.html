@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gloweasy - 외국인을 위한 뷰티 예약</title>
+  <title>Frix Beauty - 외국인을 위한 뷰티 예약</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -17,15 +17,15 @@
   <header class="site-header">
     <nav class="nav">
       <div class="brand">
-        <span class="brand-mark">G</span>
+        <span class="brand-mark">F</span>
         <div>
-          <p class="brand-name">Gloweasy</p>
+          <p class="brand-name">Frix Beauty</p>
           <p class="brand-tag" data-i18n="brand.tag">Beauty concierge for travelers</p>
         </div>
       </div>
       <div class="nav-actions">
         <button class="ghost" data-i18n="nav.about">서비스 안내</button>
-        <button class="ghost" data-i18n="nav.partners">파트너 미용실</button>
+        <button class="ghost" data-i18n="nav.partners">파트너 문의</button>
         <div class="lang-select">
           <span data-i18n="nav.language">언어</span>
           <select id="language">
@@ -42,20 +42,19 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">FOREIGNER FRIENDLY BOOKING</p>
-        <h1 data-i18n="hero.title">여행 중에도, 원하는 스타일 그대로.</h1>
+        <p class="eyebrow badge" data-i18n="hero.eyebrow">Foreigner-friendly booking</p>
+        <h1 data-i18n="hero.title">고민하지 말고, 원하는 스타일을 가장 잘하는 서울 뷰티샵을 추천받고 바로 예약하세요.</h1>
         <p class="lead" data-i18n="hero.lead">
-          지역과 일정, 원하는 이미지 한 장이면 끝. 외국인이 자주 찾는 검증된 미용실을 추천하고
-          예약까지 한 번에 연결합니다.
+          일정·지역·원하는 스타일만 입력하면, 외국인도 예약 가능한 검증 샵을 빠르게 매칭해드려요.
         </p>
         <div class="hero-metrics">
           <div>
             <p class="metric">1,240+</p>
-            <p class="metric-label" data-i18n="metric.salons">검증 미용실</p>
+            <p class="metric-label" data-i18n="metric.salons">검증 샵</p>
           </div>
           <div>
             <p class="metric">42개국</p>
-            <p class="metric-label" data-i18n="metric.languages">지원 언어</p>
+            <p class="metric-label" data-i18n="metric.languages">사용 국가</p>
           </div>
           <div>
             <p class="metric">4.86/5</p>
@@ -65,12 +64,13 @@
       </div>
       <div class="hero-card">
         <div class="card-header">
+          <p class="card-kicker" data-i18n="form.kicker">1분 입력 → 추천 결과 즉시 확인</p>
           <h2 data-i18n="form.title">빠른 추천 받기</h2>
-          <p data-i18n="form.subtitle">입력 즉시 주변 베스트 살롱을 추천합니다.</p>
+          <p data-i18n="form.subtitle">사진이 없어도 괜찮아요. 원하는 분위기만 적어도 돼요.</p>
         </div>
         <form id="booking-form" class="form">
           <label>
-            <span data-i18n="form.region">지역</span>
+            <span data-i18n="form.region">어디에서 받고 싶나요?</span>
             <div class="field-row">
               <select id="region" required>
                 <option value="" data-i18n="form.regionPlaceholder">지역 선택</option>
@@ -83,15 +83,15 @@
             </div>
           </label>
           <label>
-            <span data-i18n="form.date">날짜</span>
+            <span data-i18n="form.date">언제 받으실래요?</span>
             <input id="date" type="date" required />
           </label>
           <label>
-            <span data-i18n="form.time">시간</span>
+            <span data-i18n="form.time">선호 시간대</span>
             <input id="time" type="time" required />
           </label>
           <label>
-            <span data-i18n="form.service">서비스 유형</span>
+            <span data-i18n="form.service">원하는 시술</span>
             <div class="chips" id="service-type">
               <button type="button" class="chip active" data-value="cut" data-i18n="service.cut">커트</button>
               <button type="button" class="chip" data-value="color" data-i18n="service.color">염색</button>
@@ -101,19 +101,21 @@
             </div>
           </label>
           <label>
-            <span data-i18n="form.image">원하는 스타일 이미지</span>
+            <span data-i18n="form.image">원하는 스타일 (선택)</span>
             <div class="upload">
               <input id="style-image" type="file" accept="image/*" />
               <div class="upload-preview" id="image-preview">
                 <p data-i18n="form.imagePlaceholder">이미지 미리보기</p>
               </div>
             </div>
+            <p class="hint" data-i18n="form.imageHint">Pinterest/Instagram 링크도 가능</p>
           </label>
           <label>
             <span data-i18n="form.notes">요청사항</span>
-            <textarea id="notes" rows="3" data-i18n-placeholder="form.notesPlaceholder" placeholder="언어 지원, 알레르기, 선호 스타일 등을 적어주세요."></textarea>
+            <textarea id="notes" rows="3" data-i18n-placeholder="form.notesPlaceholder" placeholder="예: English support needed / allergy / no bleaching"></textarea>
           </label>
-          <button class="primary" type="submit" data-i18n="form.submit">추천 받기</button>
+          <button class="primary" type="submit" data-i18n="form.submit">지금 바로 추천받기</button>
+          <p class="cta-note" data-i18n="form.note">확정까지 평균 응답: 2시간</p>
         </form>
       </div>
     </section>
@@ -121,9 +123,47 @@
     <section class="results" id="results">
       <div class="section-title">
         <h2 data-i18n="results.title">추천 미용실</h2>
-        <p data-i18n="results.subtitle">입력한 일정과 이미지에 가장 가까운 미용실을 선별했습니다.</p>
+        <span class="mini-badge" data-i18n="results.badge">Foreigner-friendly booking</span>
+        <p data-i18n="results.subtitle">입력한 조건에 가장 가까운 샵을 골라드렸어요.</p>
+        <div class="alt-allow">
+          <span data-i18n="results.alt">1순위가 불가하면 비슷한 스타일로 대안 추천해도 될까요?</span>
+          <div class="alt-actions">
+            <button type="button" class="chip tiny active" data-choice="yes" data-i18n="results.altYes">Yes</button>
+            <button type="button" class="chip tiny" data-choice="no" data-i18n="results.altNo">No</button>
+          </div>
+        </div>
       </div>
       <div class="results-grid" id="results-grid">
+        <article class="salon-card template">
+          <div class="card-thumb" data-i18n="thumb.layered">Layered Cut</div>
+          <h3>Maison Frix · 홍대</h3>
+          <span class="reason-label" data-i18n="card.reason">이 샵을 추천한 이유</span>
+          <p class="card-reason" data-i18n="reason.layered">요청한 “레이어드 컷” 레퍼런스와 유사 포트폴리오가 많아요.</p>
+          <div class="card-tags">
+            <span class="tag" data-i18n="tag.foreigner">외국인 예약 OK</span>
+            <span class="tag" data-i18n="tag.layered">레이어드</span>
+            <span class="tag" data-i18n="tag.walk7">도보 7분</span>
+          </div>
+          <div class="card-actions">
+            <button class="primary" data-i18n="card.request">예약 요청하기</button>
+            <button class="ghost" data-i18n="card.map">Google Maps</button>
+          </div>
+        </article>
+        <article class="salon-card template">
+          <div class="card-thumb" data-i18n="thumb.softperm">Soft Perm</div>
+          <h3>Frix Atelier · 성수</h3>
+          <span class="reason-label" data-i18n="card.reason">이 샵을 추천한 이유</span>
+          <p class="card-reason" data-i18n="reason.walk">홍대 기준 도보 7분 + 외국인 응대 경험이 많아요.</p>
+          <div class="card-tags">
+            <span class="tag" data-i18n="tag.foreigner">외국인 예약 OK</span>
+            <span class="tag" data-i18n="tag.perm">펌 전문</span>
+            <span class="tag" data-i18n="tag.walk10">10분 이내</span>
+          </div>
+          <div class="card-actions">
+            <button class="primary" data-i18n="card.request">예약 요청하기</button>
+            <button class="ghost" data-i18n="card.map">Google Maps</button>
+          </div>
+        </article>
         <div class="placeholder">
           <h3 data-i18n="results.placeholderTitle">추천 결과가 여기에 표시됩니다.</h3>
           <p data-i18n="results.placeholderBody">지역과 일정 입력 후 추천 받기를 눌러주세요.</p>
@@ -139,18 +179,18 @@
       <div class="steps-grid">
         <article>
           <span>01</span>
-          <h3 data-i18n="steps.one">입력</h3>
-          <p data-i18n="steps.oneBody">지역, 날짜, 시간, 이미지를 입력합니다.</p>
+          <h3 data-i18n="steps.one">스타일 & 일정 입력</h3>
+          <p data-i18n="steps.oneBody">원하는 스타일(또는 이미지) + 일정만</p>
         </article>
         <article>
           <span>02</span>
-          <h3 data-i18n="steps.two">추천</h3>
-          <p data-i18n="steps.twoBody">리뷰와 외국인 만족도를 기준으로 선별합니다.</p>
+          <h3 data-i18n="steps.two">최적 샵 추천</h3>
+          <p data-i18n="steps.twoBody">검증된 샵 중 가장 근접 매칭</p>
         </article>
         <article>
           <span>03</span>
-          <h3 data-i18n="steps.three">예약</h3>
-          <p data-i18n="steps.threeBody">다국어 컨시어지가 예약을 확정합니다.</p>
+          <h3 data-i18n="steps.three">프릭스가 예약 확정</h3>
+          <p data-i18n="steps.threeBody">언어/예약 커뮤니케이션까지 처리</p>
         </article>
       </div>
     </section>

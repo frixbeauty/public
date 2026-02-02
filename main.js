@@ -1,36 +1,45 @@
 const salons = [
   {
     id: "s1",
-    name: "Luma Atelier",
+    name: "Maison Frix",
     region: "seoul",
     area: "홍대",
     rating: 4.9,
-    distance: "0.8km",
+    distance: "0.7km",
     price: "₩₩",
     languages: ["EN", "JP", "CN"],
-    specialties: ["커트", "컬러", "웨이브"],
+    specialties: ["커트", "레이어드", "광택"],
+    thumbKey: "thumb.layered",
+    reasonKey: "reason.layered",
+    tags: ["tag.foreigner", "tag.layered", "tag.walk7"],
   },
   {
     id: "s2",
-    name: "Mori & Co",
+    name: "Frix Atelier",
     region: "seoul",
-    area: "청담",
+    area: "성수",
     rating: 4.8,
-    distance: "1.4km",
+    distance: "1.1km",
     price: "₩₩₩",
     languages: ["EN", "FR"],
-    specialties: ["메이크업", "스타일링"],
+    specialties: ["펌", "스타일링"],
+    thumbKey: "thumb.softperm",
+    reasonKey: "reason.walk",
+    tags: ["tag.foreigner", "tag.perm", "tag.walk10"],
   },
   {
     id: "s3",
-    name: "Seafoam Studio",
+    name: "Rosebound",
     region: "busan",
     area: "광안리",
     rating: 4.7,
     distance: "0.5km",
     price: "₩₩",
     languages: ["EN", "CN"],
-    specialties: ["커트", "헤드스파"],
+    specialties: ["컬러", "클리닉"],
+    thumbKey: "thumb.color",
+    reasonKey: "reason.color",
+    tags: ["tag.foreigner", "tag.color", "tag.metro"],
   },
   {
     id: "s4",
@@ -42,6 +51,9 @@ const salons = [
     price: "₩₩",
     languages: ["EN", "TH"],
     specialties: ["컬러", "메이크업"],
+    thumbKey: "thumb.color",
+    reasonKey: "reason.color",
+    tags: ["tag.foreigner", "tag.color", "tag.metro"],
   },
   {
     id: "s5",
@@ -53,6 +65,9 @@ const salons = [
     price: "₩",
     languages: ["EN", "JP"],
     specialties: ["펌", "클리닉"],
+    thumbKey: "thumb.softperm",
+    reasonKey: "reason.perm",
+    tags: ["tag.foreigner", "tag.perm", "tag.walk7"],
   },
   {
     id: "s6",
@@ -64,6 +79,9 @@ const salons = [
     price: "₩₩",
     languages: ["EN", "ES"],
     specialties: ["커트", "펌"],
+    thumbKey: "thumb.layered",
+    reasonKey: "reason.layered",
+    tags: ["tag.foreigner", "tag.layered", "tag.walk10"],
   },
 ];
 
@@ -71,49 +89,56 @@ const i18n = {
   ko: {
     "brand.tag": "Beauty concierge for travelers",
     "nav.about": "서비스 안내",
-    "nav.partners": "파트너 미용실",
+    "nav.partners": "파트너 문의",
     "nav.language": "언어",
-    "hero.eyebrow": "FOREIGNER FRIENDLY BOOKING",
-    "hero.title": "여행 중에도, 원하는 스타일 그대로.",
+    "hero.eyebrow": "Foreigner-friendly booking",
+    "hero.title": "고민하지 말고, 원하는 스타일을 가장 잘하는 서울 뷰티샵을 추천받고 바로 예약하세요.",
     "hero.lead":
-      "지역과 일정, 원하는 이미지 한 장이면 끝. 외국인이 자주 찾는 검증된 미용실을 추천하고 예약까지 한 번에 연결합니다.",
-    "metric.salons": "검증 미용실",
-    "metric.languages": "지원 언어",
+      "일정·지역·원하는 스타일만 입력하면, 외국인도 예약 가능한 검증 샵을 빠르게 매칭해드려요.",
+    "metric.salons": "검증 샵",
+    "metric.languages": "사용 국가",
     "metric.rating": "만족도",
+    "form.kicker": "1분 입력 → 추천 결과 즉시 확인",
     "form.title": "빠른 추천 받기",
-    "form.subtitle": "입력 즉시 주변 베스트 살롱을 추천합니다.",
-    "form.region": "지역",
+    "form.subtitle": "사진이 없어도 괜찮아요. 원하는 분위기만 적어도 돼요.",
+    "form.region": "어디에서 받고 싶나요?",
     "form.regionPlaceholder": "지역 선택",
     "form.neighborhood": "상세 위치 (예: 홍대)",
-    "form.date": "날짜",
-    "form.time": "시간",
-    "form.service": "서비스 유형",
+    "form.date": "언제 받으실래요?",
+    "form.time": "선호 시간대",
+    "form.service": "원하는 시술",
     "service.cut": "커트",
     "service.color": "염색",
     "service.perm": "펌",
     "service.spa": "헤드스파",
     "service.makeup": "메이크업",
-    "form.image": "원하는 스타일 이미지",
+    "form.image": "원하는 스타일 (선택)",
     "form.imagePlaceholder": "이미지 미리보기",
+    "form.imageHint": "Pinterest/Instagram 링크도 가능",
     "form.notes": "요청사항",
-    "form.notesPlaceholder": "언어 지원, 알레르기, 선호 스타일 등을 적어주세요.",
-    "form.submit": "추천 받기",
+    "form.notesPlaceholder": "예: English support needed / allergy / no bleaching",
+    "form.submit": "지금 바로 추천받기",
+    "form.note": "확정까지 평균 응답: 2시간",
     "results.title": "추천 미용실",
-    "results.subtitle": "입력한 일정과 이미지에 가장 가까운 미용실을 선별했습니다.",
+    "results.badge": "Foreigner-friendly booking",
+    "results.subtitle": "입력한 조건에 가장 가까운 샵을 골라드렸어요.",
+    "results.alt": "1순위가 불가하면 비슷한 스타일로 대안 추천해도 될까요?",
+    "results.altYes": "Yes",
+    "results.altNo": "No",
     "results.placeholderTitle": "추천 결과가 여기에 표시됩니다.",
     "results.placeholderBody": "지역과 일정 입력 후 추천 받기를 눌러주세요.",
-    "results.emptyTitle": "해당 지역에 추천 가능한 미용실이 없습니다.",
+    "results.emptyTitle": "해당 지역에 추천 가능한 샵이 없습니다.",
     "results.emptyBody": "다른 지역을 선택하거나 날짜를 변경해 주세요.",
     "results.requiredTitle": "필수 정보를 먼저 입력해 주세요.",
     "results.requiredBody": "지역, 날짜, 시간을 입력하면 추천 결과가 표시됩니다.",
     "steps.title": "예약 과정",
-    "steps.subtitle": "외국인도 쉽게 예약할 수 있도록 번역과 결제까지 연결합니다.",
-    "steps.one": "입력",
-    "steps.oneBody": "지역, 날짜, 시간, 이미지를 입력합니다.",
-    "steps.two": "추천",
-    "steps.twoBody": "리뷰와 외국인 만족도를 기준으로 선별합니다.",
-    "steps.three": "예약",
-    "steps.threeBody": "다국어 컨시어지가 예약을 확정합니다.",
+    "steps.subtitle": "프릭스가 고민을 줄이고 예약까지 대신합니다.",
+    "steps.one": "스타일 & 일정 입력",
+    "steps.oneBody": "원하는 스타일(또는 이미지) + 일정만",
+    "steps.two": "최적 샵 추천",
+    "steps.twoBody": "검증된 샵 중 가장 근접 매칭",
+    "steps.three": "프릭스가 예약 확정",
+    "steps.threeBody": "언어/예약 커뮤니케이션까지 처리",
     "modal.close": "닫기",
     "modal.title": "예약 확인",
     "modal.cancel": "취소",
@@ -139,48 +164,69 @@ const i18n = {
     "status.sending": "전송 중",
     "status.sent": "전송됨",
     "success.done": "완료",
-    "card.match": "매칭",
-    "card.languages": "언어",
-    "card.specialties": "특화",
-    "card.book": "예약하기",
+    "card.request": "예약 요청하기",
+    "card.map": "Google Maps",
+    "card.reason": "이 샵을 추천한 이유",
+    "tag.foreigner": "외국인 예약 OK",
+    "tag.layered": "레이어드",
+    "tag.perm": "펌 전문",
+    "tag.walk7": "도보 7분",
+    "tag.walk10": "10분 이내",
+    "tag.metro": "역세권",
+    "tag.color": "컬러 전문",
+    "thumb.layered": "Layered Cut",
+    "thumb.softperm": "Soft Perm",
+    "thumb.color": "Gloss Color",
+    "reason.layered": "요청한 “레이어드 컷” 레퍼런스와 유사 포트폴리오가 많아요.",
+    "reason.walk": "홍대 기준 도보 7분 + 외국인 응대 경험이 많아요.",
+    "reason.color": "광택 컬러 포트폴리오와 외국인 리뷰가 많아요.",
+    "reason.perm": "부드러운 펌 결과 사진이 많은 샵이에요.",
     "region.seoul": "서울",
     "region.busan": "부산",
     "region.jeju": "제주",
     "region.daegu": "대구",
-    "success.message": "예약이 완료되었습니다. {salon}에서 {date} {time}에 뵐게요. 컨시어지가 30분 내에 연락드립니다.",
+    "success.message":
+      "예약이 완료되었습니다. {salon}에서 {date} {time}에 뵐게요. 컨시어지가 30분 내에 연락드립니다.",
   },
   en: {
     "brand.tag": "Beauty concierge for travelers",
     "nav.about": "How it works",
-    "nav.partners": "Partner salons",
+    "nav.partners": "Partner inquiry",
     "nav.language": "Language",
-    "hero.eyebrow": "FOREIGNER FRIENDLY BOOKING",
-    "hero.title": "Your look, even while traveling.",
+    "hero.eyebrow": "Foreigner-friendly booking",
+    "hero.title": "Skip the 고민. Get matched with the best Seoul beauty shops for your style and book right away.",
     "hero.lead":
-      "Pick a region, date, time, and reference image. We match you with top-rated salons and secure the booking.",
-    "metric.salons": "Verified salons",
-    "metric.languages": "Languages",
+      "Enter your schedule, area, and desired look. We quickly match verified salons that welcome foreign guests.",
+    "metric.salons": "Verified shops",
+    "metric.languages": "Countries served",
     "metric.rating": "Satisfaction",
+    "form.kicker": "1-minute input → instant matches",
     "form.title": "Get instant matches",
-    "form.subtitle": "Find the best salons around your location in seconds.",
-    "form.region": "Region",
+    "form.subtitle": "No photo needed. Just describe the vibe you want.",
+    "form.region": "Where do you want it?",
     "form.regionPlaceholder": "Select region",
     "form.neighborhood": "Neighborhood (e.g. Hongdae)",
-    "form.date": "Date",
-    "form.time": "Time",
-    "form.service": "Service type",
+    "form.date": "When would you like it?",
+    "form.time": "Preferred time",
+    "form.service": "Preferred service",
     "service.cut": "Cut",
     "service.color": "Color",
     "service.perm": "Perm",
     "service.spa": "Head spa",
     "service.makeup": "Makeup",
-    "form.image": "Style reference",
+    "form.image": "Style reference (optional)",
     "form.imagePlaceholder": "Image preview",
+    "form.imageHint": "Pinterest/Instagram links accepted",
     "form.notes": "Notes",
-    "form.notesPlaceholder": "Language support, allergies, preferred style, etc.",
-    "form.submit": "Get matches",
+    "form.notesPlaceholder": "e.g. English support needed / allergy / no bleaching",
+    "form.submit": "Get matches now",
+    "form.note": "Average response time: 2 hours",
     "results.title": "Recommended salons",
-    "results.subtitle": "We picked the closest matches to your schedule and style.",
+    "results.badge": "Foreigner-friendly booking",
+    "results.subtitle": "We picked the closest matches to your request.",
+    "results.alt": "If the top choice is unavailable, may we suggest a similar style?",
+    "results.altYes": "Yes",
+    "results.altNo": "No",
     "results.placeholderTitle": "Your recommendations will appear here.",
     "results.placeholderBody": "Choose region, date, time, then request matches.",
     "results.emptyTitle": "No salons available in this area.",
@@ -188,13 +234,13 @@ const i18n = {
     "results.requiredTitle": "Please fill in the required fields.",
     "results.requiredBody": "Region, date, and time are needed to show matches.",
     "steps.title": "Booking steps",
-    "steps.subtitle": "Translation and payment are handled so travelers can book easily.",
-    "steps.one": "Input",
-    "steps.oneBody": "Add region, date, time, and an image.",
-    "steps.two": "Match",
-    "steps.twoBody": "We rank salons by reviews and traveler ratings.",
-    "steps.three": "Book",
-    "steps.threeBody": "Multilingual concierge confirms the reservation.",
+    "steps.subtitle": "Frix removes the 고민 and books on your behalf.",
+    "steps.one": "Style & schedule input",
+    "steps.oneBody": "Just your style (or image) + schedule",
+    "steps.two": "Best salon match",
+    "steps.twoBody": "Closest match from verified salons",
+    "steps.three": "Frix confirms booking",
+    "steps.threeBody": "We handle language and reservation communication",
     "modal.close": "Close",
     "modal.title": "Confirm booking",
     "modal.cancel": "Cancel",
@@ -220,48 +266,69 @@ const i18n = {
     "status.sending": "Sending",
     "status.sent": "Sent",
     "success.done": "Done",
-    "card.match": "Match",
-    "card.languages": "Languages",
-    "card.specialties": "Specialties",
-    "card.book": "Book now",
+    "card.request": "Request booking",
+    "card.map": "Google Maps",
+    "card.reason": "Why we picked this salon",
+    "tag.foreigner": "Foreigner booking OK",
+    "tag.layered": "Layered cut",
+    "tag.perm": "Perm expert",
+    "tag.walk7": "7-min walk",
+    "tag.walk10": "Within 10 min",
+    "tag.metro": "Near subway",
+    "tag.color": "Color specialist",
+    "thumb.layered": "Layered Cut",
+    "thumb.softperm": "Soft Perm",
+    "thumb.color": "Gloss Color",
+    "reason.layered": "Plenty of portfolios similar to your layered cut reference.",
+    "reason.walk": "7-minute walk from Hongdae + strong foreign guest support.",
+    "reason.color": "Excellent gloss color portfolio with foreign guest reviews.",
+    "reason.perm": "Known for soft perm results and styling.",
     "region.seoul": "Seoul",
     "region.busan": "Busan",
     "region.jeju": "Jeju",
     "region.daegu": "Daegu",
-    "success.message": "Your booking is confirmed. See you at {salon} on {date} at {time}. Our concierge will contact you within 30 minutes.",
+    "success.message":
+      "Your booking is confirmed. See you at {salon} on {date} at {time}. Our concierge will contact you within 30 minutes.",
   },
   ja: {
     "brand.tag": "Beauty concierge for travelers",
     "nav.about": "サービス案内",
-    "nav.partners": "提携サロン",
+    "nav.partners": "パートナー問い合わせ",
     "nav.language": "言語",
-    "hero.eyebrow": "FOREIGNER FRIENDLY BOOKING",
-    "hero.title": "旅先でも理想のスタイルを。",
+    "hero.eyebrow": "Foreigner-friendly booking",
+    "hero.title": "迷わずに、理想のスタイルに強いソウルのサロンを見つけて予約まで。",
     "hero.lead":
-      "エリア・日時・参考画像を入力するだけ。高評価サロンをマッチングし予約まで行います。",
-    "metric.salons": "認証サロン",
-    "metric.languages": "対応言語",
+      "日程・エリア・理想のスタイルを入力するだけ。外国人予約OKの検証済みサロンをすぐにマッチング。",
+    "metric.salons": "検証サロン",
+    "metric.languages": "利用国",
     "metric.rating": "満足度",
+    "form.kicker": "1分入力 → すぐにおすすめ",
     "form.title": "すぐにおすすめ",
-    "form.subtitle": "現在地周辺の人気サロンをすぐに提案します。",
-    "form.region": "エリア",
+    "form.subtitle": "写真がなくても大丈夫。雰囲気だけでOK。",
+    "form.region": "どこで受けたいですか？",
     "form.regionPlaceholder": "エリアを選択",
     "form.neighborhood": "詳細エリア (例: ホンデ)",
-    "form.date": "日付",
-    "form.time": "時間",
-    "form.service": "サービス",
+    "form.date": "いつ受けたいですか？",
+    "form.time": "希望時間帯",
+    "form.service": "希望メニュー",
     "service.cut": "カット",
     "service.color": "カラー",
     "service.perm": "パーマ",
     "service.spa": "ヘッドスパ",
     "service.makeup": "メイク",
-    "form.image": "参考画像",
+    "form.image": "参考画像 (任意)",
     "form.imagePlaceholder": "画像プレビュー",
+    "form.imageHint": "Pinterest/InstagramリンクもOK",
     "form.notes": "リクエスト",
-    "form.notesPlaceholder": "言語対応・アレルギー・希望スタイルなど。",
-    "form.submit": "おすすめを見る",
+    "form.notesPlaceholder": "例: English support needed / allergy / no bleaching",
+    "form.submit": "今すぐおすすめ",
+    "form.note": "平均返信時間: 2時間",
     "results.title": "おすすめサロン",
-    "results.subtitle": "入力内容に最も近いサロンを選定しました。",
+    "results.badge": "Foreigner-friendly booking",
+    "results.subtitle": "条件に近いサロンを選びました。",
+    "results.alt": "第一希望が不可の場合、近いスタイルで提案してもよろしいですか？",
+    "results.altYes": "Yes",
+    "results.altNo": "No",
     "results.placeholderTitle": "おすすめ結果がここに表示されます。",
     "results.placeholderBody": "エリアと日時を入力してから押してください。",
     "results.emptyTitle": "このエリアのおすすめはありません。",
@@ -269,13 +336,13 @@ const i18n = {
     "results.requiredTitle": "必須情報を入力してください。",
     "results.requiredBody": "エリア・日付・時間が必要です。",
     "steps.title": "予約の流れ",
-    "steps.subtitle": "翻訳と決済までサポートします。",
-    "steps.one": "入力",
-    "steps.oneBody": "エリア、日付、時間、画像を入力します。",
-    "steps.two": "推薦",
-    "steps.twoBody": "レビューと旅行者評価で選定します。",
-    "steps.three": "予約",
-    "steps.threeBody": "多言語コンシェルジュが確定します。",
+    "steps.subtitle": "フリックスが迷いと予約を代行します。",
+    "steps.one": "スタイル & 日程入力",
+    "steps.oneBody": "希望スタイル(画像) + 日程だけ",
+    "steps.two": "最適サロン推薦",
+    "steps.twoBody": "検証済みサロンから最適マッチ",
+    "steps.three": "フリックスが確定",
+    "steps.threeBody": "言語/予約コミュニケーションまで対応",
     "modal.close": "閉じる",
     "modal.title": "予約確認",
     "modal.cancel": "キャンセル",
@@ -301,61 +368,82 @@ const i18n = {
     "status.sending": "送信中",
     "status.sent": "送信済み",
     "success.done": "完了",
-    "card.match": "一致度",
-    "card.languages": "言語",
-    "card.specialties": "得意",
-    "card.book": "予約する",
+    "card.request": "予約リクエスト",
+    "card.map": "Google Maps",
+    "card.reason": "おすすめ理由",
+    "tag.foreigner": "外国人予約OK",
+    "tag.layered": "レイヤーカット",
+    "tag.perm": "パーマ専門",
+    "tag.walk7": "徒歩7分",
+    "tag.walk10": "10分以内",
+    "tag.metro": "駅近",
+    "tag.color": "カラー専門",
+    "thumb.layered": "Layered Cut",
+    "thumb.softperm": "Soft Perm",
+    "thumb.color": "Gloss Color",
+    "reason.layered": "レイヤーカットの参考に近い実績が豊富です。",
+    "reason.walk": "ホンデ徒歩7分 + 外国人対応実績が豊富。",
+    "reason.color": "ツヤカラーの実績と外国人レビューが多いです。",
+    "reason.perm": "柔らかいパーマの仕上がりが豊富。",
     "region.seoul": "ソウル",
     "region.busan": "プサン",
     "region.jeju": "チェジュ",
     "region.daegu": "テグ",
-    "success.message": "予約が確定しました。{salon}で{date} {time}にお会いしましょう。30分以内に連絡します。",
+    "success.message":
+      "予約が確定しました。{salon}で{date} {time}にお会いしましょう。30分以内に連絡します。",
   },
   zh: {
     "brand.tag": "Beauty concierge for travelers",
     "nav.about": "服务介绍",
-    "nav.partners": "合作沙龙",
+    "nav.partners": "合作咨询",
     "nav.language": "语言",
-    "hero.eyebrow": "FOREIGNER FRIENDLY BOOKING",
-    "hero.title": "旅行中也能保持理想发型。",
-    "hero.lead": "选择区域、日期、时间与参考图片，我们会匹配高评分沙龙并完成预约。",
-    "metric.salons": "认证沙龙",
-    "metric.languages": "支持语言",
+    "hero.eyebrow": "Foreigner-friendly booking",
+    "hero.title": "不用纠结，立即匹配最适合你风格的首尔美业店并完成预约。",
+    "hero.lead": "输入时间、区域和想要的风格，我们会快速匹配可接待外宾的认证店。",
+    "metric.salons": "认证店铺",
+    "metric.languages": "使用国家",
     "metric.rating": "满意度",
+    "form.kicker": "1分钟填写 → 即刻推荐",
     "form.title": "快速推荐",
-    "form.subtitle": "立即找到附近最合适的沙龙。",
-    "form.region": "区域",
+    "form.subtitle": "没有照片也没关系，描述想要的感觉即可。",
+    "form.region": "想在哪里做？",
     "form.regionPlaceholder": "选择区域",
     "form.neighborhood": "详细位置 (如 弘大)",
-    "form.date": "日期",
-    "form.time": "时间",
-    "form.service": "服务类型",
+    "form.date": "想什么时候？",
+    "form.time": "偏好时间段",
+    "form.service": "想要的项目",
     "service.cut": "剪发",
     "service.color": "染发",
     "service.perm": "烫发",
     "service.spa": "头皮护理",
     "service.makeup": "化妆",
-    "form.image": "参考图片",
+    "form.image": "参考风格 (可选)",
     "form.imagePlaceholder": "图片预览",
+    "form.imageHint": "可提供 Pinterest/Instagram 链接",
     "form.notes": "备注",
-    "form.notesPlaceholder": "语言支持、过敏信息、偏好等。",
-    "form.submit": "获取推荐",
+    "form.notesPlaceholder": "例: English support needed / allergy / no bleaching",
+    "form.submit": "立即推荐",
+    "form.note": "平均响应: 2小时",
     "results.title": "推荐沙龙",
-    "results.subtitle": "已为你筛选最匹配的沙龙。",
+    "results.badge": "Foreigner-friendly booking",
+    "results.subtitle": "已为你挑选最接近条件的店铺。",
+    "results.alt": "若首选不可用，是否推荐相似风格？",
+    "results.altYes": "Yes",
+    "results.altNo": "No",
     "results.placeholderTitle": "推荐结果将在这里显示。",
-    "results.placeholderBody": "选择区域与时间后点击获取推荐。",
-    "results.emptyTitle": "该区域暂无推荐沙龙。",
+    "results.placeholderBody": "选择区域与时间后点击推荐。",
+    "results.emptyTitle": "该区域暂无推荐店铺。",
     "results.emptyBody": "请尝试其他区域或日期。",
     "results.requiredTitle": "请先填写必填信息。",
     "results.requiredBody": "需要区域、日期和时间才能推荐。",
     "steps.title": "预约流程",
-    "steps.subtitle": "提供翻译与支付支持，轻松预约。",
-    "steps.one": "填写",
-    "steps.oneBody": "输入区域、日期、时间与图片。",
-    "steps.two": "匹配",
-    "steps.twoBody": "依据评价与旅客满意度筛选。",
-    "steps.three": "预约",
-    "steps.threeBody": "多语种顾问完成确认。",
+    "steps.subtitle": "Frix 帮你减轻纠结并代为确认预约。",
+    "steps.one": "风格 & 日程填写",
+    "steps.oneBody": "仅需风格(或图片)+日程",
+    "steps.two": "最佳店铺匹配",
+    "steps.twoBody": "从认证店中匹配最合适",
+    "steps.three": "Frix 确认预约",
+    "steps.threeBody": "语言与预约沟通一并处理",
     "modal.close": "关闭",
     "modal.title": "确认预约",
     "modal.cancel": "取消",
@@ -381,15 +469,29 @@ const i18n = {
     "status.sending": "发送中",
     "status.sent": "已发送",
     "success.done": "完成",
-    "card.match": "匹配度",
-    "card.languages": "语言",
-    "card.specialties": "擅长",
-    "card.book": "立即预约",
+    "card.request": "提交预约",
+    "card.map": "Google Maps",
+    "card.reason": "推荐理由",
+    "tag.foreigner": "可接待外宾",
+    "tag.layered": "层次剪",
+    "tag.perm": "烫发专家",
+    "tag.walk7": "步行7分钟",
+    "tag.walk10": "10分钟内",
+    "tag.metro": "地铁附近",
+    "tag.color": "染发专长",
+    "thumb.layered": "Layered Cut",
+    "thumb.softperm": "Soft Perm",
+    "thumb.color": "Gloss Color",
+    "reason.layered": "有大量与层次剪参考相近的作品。",
+    "reason.walk": "距弘大步行7分钟，外宾服务经验丰富。",
+    "reason.color": "亮泽染发作品多，外宾评价好。",
+    "reason.perm": "柔和烫发效果口碑好。",
     "region.seoul": "首尔",
     "region.busan": "釜山",
     "region.jeju": "济州",
     "region.daegu": "大邱",
-    "success.message": "预约已确认。我们将在{date} {time}于{salon}见面，顾问会在30分钟内联系你。",
+    "success.message":
+      "预约已确认。我们将在{date} {time}于{salon}见面，顾问会在30分钟内联系你。",
   },
 };
 
@@ -453,6 +555,7 @@ const paymentPhone = document.getElementById("payment-phone");
 const regionSelect = document.getElementById("region");
 const languageSelect = document.getElementById("language");
 const serviceChips = document.querySelectorAll("#service-type .chip");
+const altChoiceButtons = document.querySelectorAll(".alt-actions .chip");
 
 const state = {
   lang: "ko",
@@ -460,6 +563,7 @@ const state = {
   selectedSalon: null,
   lastInputs: null,
   lastResults: [],
+  altAllow: true,
   deposit: null,
   confirmations: {
     email: null,
@@ -549,6 +653,14 @@ serviceChips.forEach((chip) => {
   });
 });
 
+altChoiceButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    altChoiceButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+    state.altAllow = button.dataset.choice === "yes";
+  });
+});
+
 languageSelect.addEventListener("change", (event) => {
   state.lang = event.target.value;
   applyTranslations();
@@ -581,26 +693,25 @@ function buildSuccess(salon, inputs) {
     .replace("{time}", inputs.time);
 }
 
-function buildCard(salon, score, inputs) {
+function buildCard(salon, inputs) {
   const card = document.createElement("article");
   card.className = "salon-card";
   card.innerHTML = `
-    <h3>${salon.name}</h3>
-    <div class="card-meta">
-      <span class="tag">${salon.area}</span>
-      <span>${salon.distance}</span>
-      <span>${salon.price}</span>
-      <span>⭐ ${salon.rating}</span>
+    <div class="card-thumb">${t(salon.thumbKey)}</div>
+    <h3>${salon.name} · ${salon.area}</h3>
+    <span class="reason-label">${t("card.reason")}</span>
+    <p class="card-reason">${t(salon.reasonKey)}</p>
+    <div class="card-tags">
+      ${salon.tags.map((tag) => `<span class="tag">${t(tag)}</span>`).join("")}
     </div>
-    <p class="score">${t("card.match")} ${score}%</p>
-    <div class="card-meta">
-      <span>${t("card.languages")}: ${salon.languages.join(", ")}</span>
-      <span>${t("card.specialties")}: ${salon.specialties.join(", ")}</span>
+    <div class="card-actions">
+      <button class="primary book" data-id="${salon.id}">${t("card.request")}</button>
+      <button class="ghost map" data-id="${salon.id}">${t("card.map")}</button>
     </div>
-    <button class="primary book" data-id="${salon.id}">${t("card.book")}</button>
   `;
 
   const button = card.querySelector(".book");
+  const mapButton = card.querySelector(".map");
   button.addEventListener("click", () => {
     state.selectedSalon = salon;
     state.lastInputs = inputs;
@@ -612,6 +723,12 @@ function buildCard(salon, score, inputs) {
     showStep(1);
     modal.classList.add("show");
     modal.setAttribute("aria-hidden", "false");
+  });
+
+  mapButton.addEventListener("click", () => {
+    const query = encodeURIComponent(`${salon.name} ${salon.area}`);
+    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    window.open(mapUrl, "_blank", "noopener");
   });
 
   return card;
@@ -629,9 +746,8 @@ function renderResults(items, inputs) {
     return;
   }
 
-  items.forEach((item, index) => {
-    const score = Math.min(99, Math.round(item.rating * 20 + 8 - index * 3));
-    resultsGrid.appendChild(buildCard(item, score, inputs));
+  items.forEach((item) => {
+    resultsGrid.appendChild(buildCard(item, inputs));
   });
 }
 
@@ -772,6 +888,28 @@ payNow.addEventListener("click", () => {
 finishBooking.addEventListener("click", () => {
   closeBookingModal();
   resetPaymentForm();
+});
+
+resendEmail.addEventListener("click", () => {
+  if (!paymentEmail.value) return;
+  setConfirmationStatus("email", "status.sending");
+  fakeSendConfirmationAPI("email", {
+    email: paymentEmail.value,
+    salon: state.selectedSalon?.name,
+  }).then(() => {
+    setConfirmationStatus("email", "status.sent");
+  });
+});
+
+resendSms.addEventListener("click", () => {
+  if (!paymentPhone.value) return;
+  setConfirmationStatus("sms", "status.sending");
+  fakeSendConfirmationAPI("sms", {
+    phone: paymentPhone.value,
+    salon: state.selectedSalon?.name,
+  }).then(() => {
+    setConfirmationStatus("sms", "status.sent");
+  });
 });
 
 applyTranslations();
