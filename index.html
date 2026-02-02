@@ -73,11 +73,10 @@
             <span data-i18n="form.region">어디에서 받고 싶나요?</span>
             <div class="field-row">
               <select id="region" required>
-                <option value="" data-i18n="form.regionPlaceholder">지역 선택</option>
-                <option value="seoul" data-i18n="region.seoul">서울</option>
-                <option value="busan" data-i18n="region.busan">부산</option>
-                <option value="jeju" data-i18n="region.jeju">제주</option>
-                <option value="daegu" data-i18n="region.daegu">대구</option>
+                <option value="" data-i18n="form.regionPlaceholder">지역 선택 (명동·홍대·이태원 등)</option>
+                <option value="myeongdong" data-i18n="region.myeongdong">명동</option>
+                <option value="hongdae" data-i18n="region.hongdae">홍대</option>
+                <option value="itaewon" data-i18n="region.itaewon">이태원</option>
               </select>
               <input id="neighborhood" type="text" data-i18n-placeholder="form.neighborhood" placeholder="상세 위치 (예: 홍대)" />
             </div>
@@ -111,6 +110,7 @@
             <p class="hint" data-i18n="form.imageHint">Pinterest/Instagram 링크도 가능</p>
           </label>
           <p class="form-section" data-i18n="form.styleHeading">원하는 스타일을 편하게 설명해 주세요.</p>
+          <p class="hint" data-i18n="form.noExplain">현장에서 설명하지 않아도 돼요.</p>
           <label>
             <span data-i18n="form.notes">요청사항</span>
             <textarea id="notes" rows="3" data-i18n-placeholder="form.notesPlaceholder" placeholder="예: English support needed / allergy / no bleaching"></textarea>
@@ -137,7 +137,7 @@
       <div class="results-grid" id="results-grid">
         <article class="salon-card template">
           <div class="card-thumb" data-i18n="thumb.layered">Layered Cut</div>
-          <h3>Maison Frix · 홍대</h3>
+          <h3>Maison Frix · <span data-i18n="region.hongdae">홍대</span></h3>
           <span class="reason-label" data-i18n="card.reason">이 샵을 추천한 이유</span>
           <p class="card-reason" data-i18n="reason.layered">요청한 “레이어드 컷” 레퍼런스와 유사 포트폴리오가 많아요.</p>
           <div class="card-tags">
@@ -152,7 +152,7 @@
         </article>
         <article class="salon-card template">
           <div class="card-thumb" data-i18n="thumb.softperm">Soft Perm</div>
-          <h3>Frix Atelier · 성수</h3>
+          <h3>Frix Atelier · <span data-i18n="region.itaewon">이태원</span></h3>
           <span class="reason-label" data-i18n="card.reason">이 샵을 추천한 이유</span>
           <p class="card-reason" data-i18n="reason.walk">홍대 기준 도보 7분 + 외국인 응대 경험이 많아요.</p>
           <div class="card-tags">
