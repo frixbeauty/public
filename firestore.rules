@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    match /requests/{token} {
+      allow get: if true; // token is the document id
+      allow list: if isAdmin();
+      allow create: if request.auth == null
+        && request.resource.data.token == token
+        && request.resource.data.status == "Submitted";
+      allow update, delete: if isAdmin();
+    }
+
+    match /shops/{shopId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

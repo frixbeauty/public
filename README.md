@@ -1,24 +1,67 @@
-# Gloweasy
+# Gloweasy MVP (Firebase Studio ready)
 
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen)
+Curated beauty booking workflow for Korea visitors. Guests submit a request, admins confirm one main option plus two alternatives, and the guest tracks progress via a private link.
 
-외국인을 위한 뷰티서비스 예약 웹 UI. 지역/날짜/시간/스타일 이미지 기반 추천과 다국어 예약 플로우를 제공합니다.
+## Stack
+- Next.js (App Router) + TypeScript + Tailwind
+- Firebase Auth (admin only), Firestore, Firebase Hosting
 
-## Demo
+## Setup
+1) Install dependencies
+```bash
+npm install
+```
 
-- GitHub Pages: https://frixbeauty.github.io/public/
+2) Configure Firebase
+- Create a Firebase project.
+- Enable **Email/Password** auth.
+- Create a Firestore database in **production** or **test** mode.
+- Copy `.env.example` to `.env.local` and fill in your web app config.
 
-## Features
+3) Run locally
+```bash
+npm run dev
+```
+Open `http://localhost:3000`.
 
-- 다국어 UI (한국어/영어/일본어/중국어)
-- 지역/일정 입력 기반 추천 카드
-- 예약 확인 → 결제 → 완료 3단계 플로우
-- 결제/이메일/문자 전송 스텁 시뮬레이션
+4) Apply Firestore rules
+```bash
+firebase deploy --only firestore:rules
+```
 
-## Run locally
+5) Seed shops
+```bash
+npm run seed:shops
+```
 
-브라우저에서 `index.html`을 열면 됩니다.
+## Admin access
+- Create an admin user in Firebase Auth (Email/Password).
+- Any authenticated user can access admin screens in this MVP.
 
-## Deployment
+## Routes
+Guest:
+- `/request/new`
+- `/request/[token]`
 
-Settings → Pages → Source: Deploy from a branch → Branch: `main` / Folder: `/ (root)`
+Admin:
+- `/admin/login`
+- `/admin/requests`
+- `/admin/requests/[id]`
+- `/admin/directory`
+
+## Data model (Firestore)
+Collections:
+- `requests/{token}`
+- `shops/{id}`
+
+## Notes / TODO
+- Add Storage upload for reference photos.
+- Add admin role claims for stricter security.
+- Add payment integration when ready.
+
+## Deployment (Firebase Hosting)
+Use Firebase frameworks integration:
+```bash
+firebase init hosting
+firebase deploy
+```
